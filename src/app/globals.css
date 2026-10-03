@@ -1,0 +1,82 @@
+@import "tailwindcss";
+
+:root {
+  /* Enterprise Grade Palette - Subdued, Authority, High Contrast Precision */
+  --color-ink: #070B14;               /* Deep Obsidian Navy */
+  --color-deep-slate: #0D1424;        /* Engineering Chassis Panel */
+  --color-panel-card: #121C30;        /* Card Surface */
+  --color-border-dark: #1E2B45;       /* Crisp 1px Structural Divider */
+  --color-paper: #F6F5F2;             /* Editorial Parchment Light */
+  --color-paper-card: #ECEAE4;        /* Warm Light Card */
+  --color-text-light: #0B1220;        /* Deep Carbon Charcoal */
+  --color-text-muted-light: #4D5768;  /* Editorial Subcopy */
+  --color-signal-blue: #1D58D8;       /* Enterprise Navy/Cobalt Blue (Restrained, Professional) */
+  --color-secure-teal: #0D9488;       /* Calibrated Verifiable Teal (Subdued NIST Green/Teal) */
+  --color-alert-amber: #D97706;       /* Industrial Amber Accent */
+}
+
+@theme {
+  --color-ink: var(--color-ink);
+  --color-deep-slate: var(--color-deep-slate);
+  --color-panel-card: var(--color-panel-card);
+  --color-border-dark: var(--color-border-dark);
+  --color-paper: var(--color-paper);
+  --color-paper-card: var(--color-paper-card);
+  --color-text-light: var(--color-text-light);
+  --color-text-muted-light: var(--color-text-muted-light);
+  --color-signal-blue: var(--color-signal-blue);
+  --color-secure-teal: var(--color-secure-teal);
+  --color-alert-amber: var(--color-alert-amber);
+
+  --font-heading: var(--font-space-grotesk), system-ui, sans-serif;
+  --font-sans: var(--font-plus-jakarta), system-ui, sans-serif;
+  --font-mono: var(--font-space-mono), monospace;
+}
+
+/* Base resets & typography */
+html {
+  scroll-behavior: auto;
+  background-color: var(--color-ink);
+  color: #F6F5F2;
+  font-family: var(--font-sans);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  overflow-x: hidden;
+  position: relative;
+  background-color: var(--color-ink);
+}
+
+/* Subtle architectural dot grid */
+.bg-grid-pattern {
+  background-size: 32px 32px;
+  background-image: radial-gradient(rgba(30, 43, 69, 0.45) 1px, transparent 0);
+}
+
+.bg-grid-pattern-light {
+  background-size: 24px 24px;
+  background-image: radial-gradient(rgba(11, 18, 32, 0.07) 1px, transparent 0);
+}
+
+/* Hide scrollbar for clean aesthetics */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Reduced motion settings */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
